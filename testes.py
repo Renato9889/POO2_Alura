@@ -62,6 +62,8 @@ filme3.dar_like()
 filmes_e_series = [filme1, filme2, filme3, serie1, serie2, serie3]
 filmes_favs = Playlist("Favoritos",filmes_e_series)
 
+
 print("Aqui:")
-for programa in filmes_favs.programas:
+print("Tamanho:",len(filmes_favs))
+for programa in filmes_favs:
     print(programa)

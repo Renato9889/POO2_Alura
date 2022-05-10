@@ -1,16 +1,34 @@
-# This is a sample Python script.
+class Funcionario:
+    def registra_horas(self, horas):
+        print('Horas registradas...')
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+    def mostrar_tarefas(self):
+        print('Fez muita coisa...')
+
+class Caelum(Funcionario):
+    def mostrar_tarefas(self):
+        print('Fez muita coisa, Caelumer')
+
+    def busca_cursos_do_mes(self, mes=None):
+        print(f'Mostrando cursos - {mes}' if mes else 'Mostrando cursos desse mês')
+
+class Alura(Funcionario):
+    def mostrar_tarefas(self):
+        print('Fez muita coisa, Alurete!')
+
+    def busca_perguntas_sem_resposta(self):
+        print('Mostrando perguntas não respondidas do fórum')
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+class Junior(Alura):
+    pass
 
+class Pleno(Alura, Caelum):
+    pass
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+jose = Junior()
+jose.busca_perguntas_sem_resposta()
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+luan = Pleno()
+luan.busca_perguntas_sem_resposta()
+luan.busca_cursos_do_mes()
